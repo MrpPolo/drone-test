@@ -14,11 +14,23 @@ pipeline:
     group: testing
     environment:
       - TOKEN=12345678
-    secrets: [ TOKEN1 ]
+    secrets: 
+      - source: TOKEN1
+        target: TOKEN2
     commands:
       - yarn install
-      - echo $TOKEN
-      - echo $TOKEN1
-services:
-  cache:
-    image: redis
+      - echo $TOKEN2
+      - echo $TOKEN3
+      
+  backend:
+    image: node:8.3.0
+    group: testing
+    environment:
+      - TOKEN=12345678
+    secrets: 
+      - source: TOKEN1
+        target: TOKEN3
+    commands:
+      - yarn install
+      - echo $TOKEN2
+      - echo $TOKEN3
