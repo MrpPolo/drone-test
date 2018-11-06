@@ -9,13 +9,35 @@ clone:
     tags: true
 
 pipeline:
-  node:
+  frontend:
     image: node:8.3.0
+    group: testing
     commands:
       - yarn install
-      - touch /node/a.txt
 
-  ls:
+  backend:
     image: node:8.3.0
+    group: testing
     commands:
-      - ls -al /node/
+      - echo "backend testing"
+
+  node1:
+    image: node:8.3.0
+    group: build
+    commands:
+      - sleep 5
+      - echo "sleep 5"
+
+  node2:
+    image: node:8.3.0
+    group: build
+    commands:
+      - sleep 10
+      - echo "sleep 10"
+
+  node3:
+    image: node:8.3.0
+    group: build
+    commands:
+      - sleep 15
+      - echo "sleep 15"
