@@ -16,5 +16,5 @@ pipeline:
       - yarn install
 
 services:
-  redis:
+  cache:
     image: redis
