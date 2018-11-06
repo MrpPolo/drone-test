@@ -12,8 +12,11 @@ pipeline:
   frontend:
     image: node:8.3.0
     group: testing
+    environment:
+      - TOKEN=12345678
     commands:
       - yarn install
+      - echo $TOKEN
 
 services:
   cache:
