@@ -14,10 +14,11 @@ pipeline:
     group: testing
     environment:
       - TOKEN=12345678
+    secrets: [ TOKEN1 ]
     commands:
       - yarn install
       - echo $TOKEN
-
+      - echo $TOKEN1
 services:
   cache:
     image: redis
