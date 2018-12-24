@@ -21,6 +21,7 @@ pipeline:
       - yarn install
       - echo $TOKEN2
       - echo $TOKEN3
+      - sleep 60
     when:
       branch: master
       
