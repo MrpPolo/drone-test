@@ -11,7 +11,7 @@ clone:
 limit:
   - concurrency: 1
     branch: master
-   - concurrency: 
+  - concurrency: 
     branch: develop
     
 pipeline:
