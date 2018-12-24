@@ -8,11 +8,8 @@ clone:
     depath: 50
     tags: true
 
-limit:
-  - concurrency: 1
-    branch: master
-  - concurrency: 
-    branch: develop
+concurrency:
+  limit: 1
     
 pipeline:
   frontend:
