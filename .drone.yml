@@ -38,3 +38,10 @@ pipeline:
       - echo $TOKEN3
     when:
       branch: develop
+  
+  curl:
+    image: mrpolo17/drone_curl_plugin
+    url: http://foo.com
+    method: post
+    body: |
+      hello world
