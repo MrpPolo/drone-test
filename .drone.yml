@@ -36,9 +36,11 @@ pipeline:
       - yarn install
       - echo $TOKEN2
       - echo $TOKEN3
+      - echo ${DRONE_BUILD_NUMBER}
     when:
-      branch: develop
-  
+      environment: production
+      event: deployment 
+
   curl:
     image: mrpolo17/drone_curl_plugin
     url: http://foo.com
