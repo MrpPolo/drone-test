@@ -21,8 +21,10 @@ pipeline:
       - yarn install
       - echo $TOKEN2
       - echo $TOKEN3
+      - echo ${DRONE_BUILD_NUMBER}
     when:
-      branch: master
+      environment: production
+      event: deployment      
       
   backend:
     image: node:8.3.0
