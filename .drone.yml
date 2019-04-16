@@ -17,7 +17,7 @@ pipeline:
     group: testing
     environment:
       - TOKEN=12345678
-    secrets: 
+    secrets:
       - source: TOKEN1
         target: TOKEN2
     commands:
@@ -44,3 +44,10 @@ pipeline:
       - echo $TOKEN3
     when:
       branch: develop
+
+  create-master-build-number:
+    image: node:8.3.0
+    commands: 
+      - echo ${DRONE_BUILD_NUMBER}
+    when:
+      branch: master
