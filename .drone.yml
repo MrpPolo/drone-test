@@ -8,6 +8,9 @@ clone:
     depath: 50
     tags: true
 
+concurrency:
+  limit: 1
+    
 pipeline:
   frontend:
     image: node:8.3.0
@@ -21,7 +24,11 @@ pipeline:
       - yarn install
       - echo $TOKEN2
       - echo $TOKEN3
+<<<<<<< HEAD
       - echo ${DRONE_BUILD_NUMBER}
+=======
+      - sleep 60
+>>>>>>> a9195ddf8fefcea8a41189bcdbd8561fa2ee6f9a
     when:
       environment: production
       event: deployment      
