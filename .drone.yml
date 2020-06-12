@@ -4,9 +4,9 @@ pipeline:
     group: testing
     environment:
       - TOKEN=12345678
-    secrets:
-      - source: TOKEN1
-        target: TOKEN2
+    # secrets:
+    #   - source: TOKEN1
+    #     target: TOKEN2
     commands:
       - yarn install
       - echo $TOKEN2
@@ -22,9 +22,9 @@ pipeline:
     group: testing
     environment:
       - TOKEN=12345678
-    secrets: 
-      - source: TOKEN1
-        target: TOKEN3
+    # secrets: 
+    #   - source: TOKEN1
+    #     target: TOKEN3
     commands:
       - yarn install
       - echo $TOKEN2
