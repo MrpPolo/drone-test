@@ -18,8 +18,8 @@ pipeline:
   backend:
     image: node:8.3.0
     group: testing
-    environment:
-      - TOKEN=12345678
+    # environment:
+    #   - TOKEN=12345678
     # secrets: 
     #   - source: TOKEN1
     #     target: TOKEN3
