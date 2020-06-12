@@ -9,8 +9,6 @@ pipeline:
     #     target: TOKEN2
     commands:
       - yarn install
-      - echo $TOKEN2
-      - echo $TOKEN3
       - echo ${DRONE_BUILD_NUMBER}
       - sleep 60
     when:
