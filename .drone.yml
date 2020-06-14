@@ -39,14 +39,8 @@ pipeline:
       branch: master
 
   build:
-    image: docker:dind
+    image: docker
     commands:
       - docker build . -t drone-test:${DRONE_BUILD_NUMBER}
     volumes:
-      - name: dockersock
-        path: /var/run/docker.sock
-
-volumes:
-  - name: dockersock
-    host:
-      path: /var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
