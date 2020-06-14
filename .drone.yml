@@ -37,3 +37,10 @@ pipeline:
       - echo test
     when:
       branch: master
+
+  build:
+    image: docker
+    commands:
+      - docker build . -t drone-test:${DRONE_BUILD_NUMBER}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
