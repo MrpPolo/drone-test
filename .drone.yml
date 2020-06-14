@@ -39,7 +39,7 @@ pipeline:
       branch: master
 
   build:
-    image: docker
+    image: docker:dind
     commands:
       - docker build . -t drone-test:${DRONE_BUILD_NUMBER}
     volumes:
