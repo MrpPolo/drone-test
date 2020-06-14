@@ -3,18 +3,24 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: docker
-  commands:
-    - docker build . -t drone-test:${DRONE_BUILD_NUMBER}
-  volumes:
-    - name: dockersock
-      path: /var/run/docker.sock
+# - name: build
+#   image: docker
+#   commands:
+#     - docker build . -t drone-test:
+#   volumes:
+#     - name: dockersock
+#       path: /var/run/docker.sock
 
-volumes:
-  - name: dockersock
-    host:
-      path: /var/run/docker.sock    
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: drone-test
+    tags: ${DRONE_BUILD_NUMBER}
+
+# volumes:
+#   - name: dockersock
+#     host:
+#       path: /var/run/docker.sock    
 
 trigger:
   branch:
